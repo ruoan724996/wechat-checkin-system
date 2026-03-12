@@ -1,0 +1,30 @@
+<!--pages/create-activity/create-activity.wxml-->
+<view class="container">
+  <form bindsubmit="onSubmit">
+    <view class="form-group">
+      <text class="label">活动名称 *</text>
+      <input class="input" name="name" placeholder="请输入活动名称" />
+    </view>
+
+    <view class="form-group">
+      <text class="label">活动描述</text>
+      <textarea class="textarea" name="description" placeholder="请输入活动描述" />
+    </view>
+
+    <view class="form-group">
+      <text class="label">开始日期 *</text>
+      <picker mode="date" value="{{startDate}}" bindchange="onStartDateChange">
+        <view class="picker">{{startDate || '选择开始日期'}}</view>
+      </picker>
+    </view>
+
+    <view class="form-group">
+      <text class="label">结束日期</text>
+      <picker mode="date" value="{{endDate}}" bindchange="onEndDateChange">
+        <view class="picker">{{endDate || '选择结束日期'}}</view>
+      </picker>
+    </view>
+
+    <button class="submit-btn" formType="submit">创建活动</button>
+  </form>
+</view>

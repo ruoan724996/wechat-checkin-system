@@ -1,0 +1,38 @@
+<!--pages/stats/stats.wxml-->
+<view class="container">
+  <view class="stats-header">
+    <text class="title">我的签到统计</text>
+  </view>
+
+  <view class="stats-cards">
+    <view class="stat-card">
+      <text class="stat-value">{{stats.totalCount}}</text>
+      <text class="stat-label">总签到次数</text>
+    </view>
+    
+    <view class="stat-card">
+      <text class="stat-value">{{stats.continuousDays}}</text>
+      <text class="stat-label">连续签到</text>
+    </view>
+    
+    <view class="stat-card">
+      <text class="stat-value">{{stats.activityCount}}</text>
+      <text class="stat-label">参与活动</text>
+    </view>
+  </view>
+
+  <view class="recent-records">
+    <text class="section-title">最近签到记录</text>
+    
+    <view class="record-item" wx:for="{{records}}" wx:key="id">
+      <view class="record-date">
+        <text class="date">{{item.checkin_date}}</text>
+        <text class="activity">{{item.activity_name}}</text>
+      </view>
+    </view>
+
+    <view class="empty" wx:if="{{records.length === 0}}">
+      <text>暂无签到记录</text>
+    </view>
+  </view>
+</view>

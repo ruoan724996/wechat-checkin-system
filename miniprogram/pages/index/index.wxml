@@ -1,0 +1,54 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-card" wx:if="{{userInfo}}">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <view class="user-info">
+      <text class="nick-name">{{userInfo.nickName}}</text>
+      <text class="welcome">欢迎回来</text>
+    </view>
+  </view>
+
+  <!-- 登录按钮 -->
+  <button class="login-btn" wx:else bindtap="handleLogin">
+    微信一键登录
+  </button>
+
+  <!-- 快速签到区域 -->
+  <view class="checkin-section" wx:if="{{userInfo}}">
+    <view class="section-title">快速签到</view>
+    
+    <view class="checkin-card" bindtap="goToCheckin" wx:if="{{currentActivity}}">
+      <view class="activity-name">{{currentActivity.name}}</view>
+      <view class="activity-desc">{{currentActivity.description}}</view>
+      <view class="checkin-stats">
+        <text>连续签到：{{stats.continuousDays}}天</text>
+        <text>总签到：{{stats.totalCount}}次</text>
+      </view>
+      <button class="checkin-btn" bindtap="doCheckin" disabled="{{hasCheckedToday}}">
+        {{hasCheckedToday ? '今日已签到' : '立即签到'}}
+      </button>
+    </view>
+
+    <view class="no-activity" wx:else>
+      <text>暂无活动，去活动列表看看吧~</text>
+      <button class="go-activity-btn" bindtap="goToActivity">查看活动</button>
+    </view>
+  </view>
+
+  <!-- 功能入口 -->
+  <view class="features" wx:if="{{userInfo}}">
+    <view class="feature-item" bindtap="goToActivity">
+      <text class="feature-icon">📋</text>
+      <text class="feature-text">活动列表</text>
+    </view>
+    <view class="feature-item" bindtap="goToCalendar">
+      <text class="feature-icon">📅</text>
+      <text class="feature-text">签到日历</text>
+    </view>
+    <view class="feature-item" bindtap="goToStats">
+      <text class="feature-icon">📊</text>
+      <text class="feature-text">我的统计</text>
+    </view>
+  </view>
+</view>

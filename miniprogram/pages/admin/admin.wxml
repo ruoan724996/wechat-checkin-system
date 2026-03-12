@@ -1,0 +1,4 @@
+<!--pages/admin/admin.wxml-->
+<view class="container">
+  <text>管理后台（待开发）</text>
+</view>

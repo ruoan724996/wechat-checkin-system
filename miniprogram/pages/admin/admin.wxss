@@ -1,0 +1,6 @@
+/* pages/admin/admin.wxss */
+.container {
+  padding: 30rpx;
+  text-align: center;
+  color: #999;
+}

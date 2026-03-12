@@ -1,0 +1,138 @@
+/* pages/activity/activity.wxss */
+.container {
+  padding: 20rpx;
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.search-bar {
+  background: white;
+  padding: 20rpx;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.search-input {
+  background: #f5f5f5;
+  padding: 20rpx;
+  border-radius: 50rpx;
+  font-size: 28rpx;
+}
+
+.activity-list {
+  padding-bottom: 20rpx;
+}
+
+.activity-item {
+  background: white;
+  border-radius: 15rpx;
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 5rpx 20rpx rgba(0, 0, 0, 0.05);
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15rpx;
+}
+
+.activity-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  flex: 1;
+}
+
+.activity-status {
+  font-size: 24rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+
+.activity-status.active {
+  background: #e8f5e9;
+  color: #4caf50;
+}
+
+.activity-status.inactive {
+  background: #f5f5f5;
+  color: #999;
+}
+
+.activity-desc {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+  line-height: 1.6;
+}
+
+.activity-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.activity-date {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.activity-stats {
+  display: flex;
+  gap: 20rpx;
+}
+
+.activity-stats text {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.join-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 100rpx 30rpx;
+  background: white;
+  border-radius: 15rpx;
+}
+
+.empty-icon {
+  font-size: 100rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  display: block;
+  font-size: 32rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.create-btn {
+  background: #4A90D9;
+  color: white;
+  border: none;
+  border-radius: 50rpx;
+  padding: 20rpx 50rpx;
+  font-size: 30rpx;
+}
+
+.loading {
+  text-align: center;
+  padding: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}

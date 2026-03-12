@@ -1,0 +1,47 @@
+<!--pages/activity/activity.wxml-->
+<view class="container">
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <input class="search-input" placeholder="搜索活动" bindinput="onSearch" />
+  </view>
+
+  <!-- 活动列表 -->
+  <view class="activity-list">
+    <view class="activity-item" wx:for="{{activities}}" wx:key="id" bindtap="goToDetail" data-id="{{item.id}}">
+      <view class="activity-header">
+        <text class="activity-name">{{item.name}}</text>
+        <text class="activity-status {{item.status}}">{{item.status === 'active' ? '进行中' : '已结束'}}</text>
+      </view>
+      
+      <view class="activity-desc">{{item.description}}</view>
+      
+      <view class="activity-footer">
+        <view class="activity-date">
+          <text>📅 {{item.start_date}} 至 {{item.end_date}}</text>
+        </view>
+        <view class="activity-stats">
+          <text>👥 {{item.total_checkins}} 次签到</text>
+          <text>👤 {{item.creator_name}}</text>
+        </view>
+      </view>
+
+      <button class="join-btn" wx:if="{{item.status === 'active'}}" catchtap="joinActivity" data-id="{{item.id}}">
+        参加活动
+      </button>
+    </view>
+
+    <!-- 空状态 -->
+    <view class="empty-state" wx:if="{{activities.length === 0}}">
+      <text class="empty-icon">📋</text>
+      <text class="empty-text">暂无活动</text>
+      <button class="create-btn" wx:if="{{isAdmin}}" bindtap="goToCreate">
+        创建活动
+      </button>
+    </view>
+  </view>
+
+  <!-- 加载状态 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view>
